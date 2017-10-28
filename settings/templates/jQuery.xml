@@ -1,59 +1,94 @@
 <templateSet group="jQuery">
-  <template name="jqapp" value="&lt;template&gt;&#10;    &lt;div&gt;$END$&lt;/div&gt;&#10;&lt;/template&gt;&#10;&#10;&lt;script&gt;&#10;    //import { mapState, mapActions, mapMutations } from 'vuex';&#10;    &#10;&#9;export default {&#10;&#9;&#9;mounted() {&#10;&#10;&#9;&#9;},&#10;&#10;&#9;&#9;data() {&#10;&#9;&#9;&#9;return {&#10;                &#10;&#9;&#9;&#9;};&#10;&#9;&#9;},&#10;&#10;&#9;&#9;methods: {&#10;&#10;&#9;&#9;}&#10;&#9;}&#10;&lt;/script&gt;&#10;&#10;&lt;style lang=&quot;scss&quot; rel=&quot;stylesheet/scss&quot; scoped&gt;&#10;    /*@import &quot;./resources/assets/sass/variables&quot;;*/&#10;&#10;&#10;&lt;/style&gt;" description="jQuery application declaration" toReformat="true" toShortenFQNames="true">
+  <template name="jqapp" value="/*global jQuery, $namespace$*/&#10;jQuery(function ($) {&#10;    'use strict';&#10;&#10;    window.$namespace$ = $.extend(window.$namespace$ || {}, {&#10;        config: {&#10;            env: 'prod',&#10;&#9;&#9;&#9;demo: 1&#10;        },&#10;        app: null // Will be set after the definition&#10;    });&#10;&#10;    function $AppName$() {&#10;        this.init();&#10;    }&#10;&#10;    $AppName$.prototype = {&#10;        constructor: $AppName$,&#10;&#10;        // DOM elements&#10;        // ...&#10;&#10;        // Properties&#10;        // ...&#10;&#10;        // Methods&#10;        /**&#10;         * @private&#10;         */&#10;        init: function () {&#10;&#9;&#9;&#9;// TODO: Get child controller&#10;            // this.demoCtrl = $('#demo').demo().data('demo');&#10;        },&#10;&#9;&#9;&#10;&#9;&#9;// TODO: Add more methods here&#10;&#9;&#9;&#10;&#9;&#9;$END$&#10;    };&#10;&#10;    window.$namespace$.app = new $AppName$();&#10;});" description="jQuery application declaration" toReformat="true" toShortenFQNames="true">
+    <variable name="namespace" expression="camelCase(String)" defaultValue="&quot;example&quot;" alwaysStopAt="true" />
+    <variable name="AppName" expression="capitalize(String)" defaultValue="&quot;Example&quot;" alwaysStopAt="true" />
     <context>
+      <option name="ACTION_SCRIPT" value="false" />
       <option name="ASPECTJ" value="false" />
-      <option name="PHP" value="false" />
-      <option name="TypeScript" value="false" />
-      <option name="Twig" value="false" />
-      <option name="JAVA_SCRIPT" value="false" />
-      <option name="JSON" value="false" />
-      <option name="CoffeeScript" value="false" />
+      <option name="Bash" value="false" />
       <option name="CSS" value="false" />
-      <option name="MXML" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="ColdFusion" value="false" />
       <option name="GAUGE" value="false" />
+      <option name="GROOVY" value="false" />
+      <option name="HAML" value="false" />
+      <option name="JAVA_CODE" value="false" />
+      <option name="JSON" value="false" />
+      <option name="JSP" value="false" />
+      <option name="JSX_HTML" value="false" />
+      <option name="JS_EXPRESSION" value="false" />
+      <option name="KOTLIN" value="false" />
+      <option name="MAVEN" value="false" />
+      <option name="MXML" value="false" />
       <option name="OGNL" value="false" />
       <option name="OTHER" value="true" />
-      <option name="Bash" value="false" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
-      <option name="GROOVY" value="false" />
-      <option name="MAVEN" value="false" />
-      <option name="ColdFusion" value="false" />
-      <option name="HAML" value="false" />
+      <option name="PHP" value="false" />
       <option name="SQL" value="false" />
-      <option name="ACTION_SCRIPT" value="false" />
+      <option name="Twig" value="false" />
+      <option name="TypeScript" value="false" />
       <option name="XML" value="false" />
-      <option name="KOTLIN" value="false" />
-      <option name="JAVA_CODE" value="false" />
-      <option name="JSP" value="false" />
     </context>
   </template>
-  <template name="jpluginp" value="export default {&#10;&#9;isLiteral: $isLiteral$,&#10;&#10;&#9;bind(el, binding) {&#10;&#9;&#9;$END$&#10;&#9;}&#10;}" description="jQuery prototypical plugin" toReformat="true" toShortenFQNames="true">
-    <variable name="isLiteral" expression="" defaultValue="&quot;true&quot;" alwaysStopAt="true" />
+  <template name="jqpluginp" value="/*global jQuery*/&#10;(function ($) {&#10;    'use strict';&#10;&#10;    $.fn.$pluginExample$ = function (option/*, varArgs*/) {&#10;        var args = Array.prototype.slice.call(arguments, 1);&#10;&#10;        return this.each(function () {&#10;            var $element = $(this);&#10;            var ctrl = $element.data('$pluginExample$');&#10;&#10;            if (!ctrl) {&#10;                var opts = $.extend({},&#10;                    $.fn.$pluginExample$.defaults,&#10;                    typeof option == 'object' &amp;&amp; option&#10;                );&#10;                &#10;                $element.data('$pluginExample$', (ctrl = new $PluginExample$(this, opts)));&#10;            }&#10;&#10;            if (typeof option == 'string') {&#10;                ctrl[option].apply(ctrl, args);&#10;            }&#10;        });&#10;    };&#10;    &#10;    $.fn.$pluginExample$.defaults = {&#10;        // TODO: Default values go here&#10;        defaultValue: 1&#10;    };&#10;&#10;    function $PluginExample$(element, options) {&#10;        this.init(element, options);&#10;    }&#10;&#10;    $PluginExample$.prototype = {&#10;        constructor: $PluginExample$,&#10;        &#10;        // Properties&#10;        // ...&#10;&#10;        // Methods&#10;        /**&#10;         * @private&#10;         * @param {jQuery} element&#10;         * @param {object} options &#10;         */&#10;        init: function (element, options) {&#10;            this.options = options;&#10;            this.$element = $(element);&#10;            &#10;            // TODO: Add initialization code here&#10;        },&#10;        &#10;        demo: function() {&#10;            this.$element.addClass('demo');&#10;            console.log('demo');&#10;        }&#10;        &#10;        // TODO: Add additional methods here&#10;        $END$&#10;    };&#10;}) (jQuery);&#10;" description="jQuery prototypical plugin" toReformat="true" toShortenFQNames="true">
+    <variable name="pluginExample" expression="camelCase(String)" defaultValue="&quot;pluginExample&quot;" alwaysStopAt="true" />
+    <variable name="PluginExample" expression="capitalize(String)" defaultValue="&quot;PluginExample&quot;" alwaysStopAt="true" />
     <context>
+      <option name="ACTION_SCRIPT" value="false" />
       <option name="ASPECTJ" value="false" />
-      <option name="PHP" value="false" />
-      <option name="TypeScript" value="false" />
-      <option name="Twig" value="false" />
-      <option name="MAVEN" value="false" />
-      <option name="JSON" value="false" />
-      <option name="CoffeeScript" value="false" />
-      <option name="CSS" value="false" />
-      <option name="MXML" value="false" />
-      <option name="GAUGE" value="false" />
-      <option name="OGNL" value="false" />
-      <option name="OTHER" value="true" />
       <option name="Bash" value="false" />
+      <option name="CSS" value="false" />
       <option name="CUCUMBER_FEATURE_FILE" value="false" />
-      <option name="JSX_HTML" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="ColdFusion" value="false" />
+      <option name="GAUGE" value="false" />
       <option name="GROOVY" value="false" />
       <option name="HAML" value="false" />
-      <option name="ColdFusion" value="false" />
-      <option name="XML" value="false" />
-      <option name="SQL" value="false" />
-      <option name="ACTION_SCRIPT" value="false" />
-      <option name="KOTLIN" value="false" />
       <option name="JAVA_CODE" value="false" />
+      <option name="JSON" value="false" />
       <option name="JSP" value="false" />
+      <option name="JSX_HTML" value="false" />
+      <option name="JS_EXPRESSION" value="false" />
+      <option name="KOTLIN" value="false" />
+      <option name="MAVEN" value="false" />
+      <option name="MXML" value="false" />
+      <option name="OGNL" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="PHP" value="false" />
+      <option name="SQL" value="false" />
+      <option name="Twig" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+  <template name="jqextend" value="(function ($) {&#10;    'use strict';&#10;&#10;    $.fn.extend({&#10;        $extendName$: $extendName$&#10;        $END$&#10;    });&#10;&#10;    ////////////////////&#10;&#10;    function $extendName$() {&#10;        // TODO: Replace with your code here&#10;        return this.each(function() {&#10;            this.checked = true;&#10;        });&#10;    }&#10;&#10;}) (jQuery);" description="jQuery extend" toReformat="true" toShortenFQNames="true">
+    <variable name="extendName" expression="camelCase(String)" defaultValue="&quot;extend&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="ACTION_SCRIPT" value="false" />
+      <option name="ASPECTJ" value="false" />
+      <option name="Bash" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="ColdFusion" value="false" />
+      <option name="GAUGE" value="false" />
+      <option name="GROOVY" value="false" />
+      <option name="HAML" value="false" />
+      <option name="JAVA_CODE" value="false" />
+      <option name="JSON" value="false" />
+      <option name="JSP" value="false" />
+      <option name="JSX_HTML" value="false" />
+      <option name="JS_EXPRESSION" value="false" />
+      <option name="KOTLIN" value="false" />
+      <option name="MAVEN" value="false" />
+      <option name="MXML" value="false" />
+      <option name="OGNL" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="PHP" value="false" />
+      <option name="SQL" value="false" />
+      <option name="Twig" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
     </context>
   </template>
 </templateSet>
