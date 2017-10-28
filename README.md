@@ -1,5 +1,5 @@
 # idea-jquery-templates
-jQuery live templates for IntelliJ IDEA and Webstorm.
+jQuery live templates for IntelliJ IDEA and Webstorm. All templates are ECMAScript 5 compliant.
 
 ### Installation
 Download `settings.jar` and import it using **File->Import Settings**.
@@ -7,11 +7,11 @@ Download `settings.jar` and import it using **File->Import Settings**.
 ### Available templates
 List with available templates abbreviations:
 
-* `jqapp` - Generates a jquery app module (_for .vue files_)
+* `jqapp` - Generates a jQuery app module
 * `jqpluginp` - Creates a prototypical jQuery plugin
 
 #### jqapp
-Entry point for you jQuery app where you can add appwide configurations and methods.
+Entry point for your jQuery app. You can add appwide configurations and methods.
 
 #### jqpluginp
 Creates a prototypical jQuery plugin with a controller. The controller will be exposed in `data`.  
