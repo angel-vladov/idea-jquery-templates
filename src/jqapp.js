@@ -24,6 +24,9 @@ jQuery(function ($) {
         // ...
 
         // Methods
+        /**
+         * @private
+         */
         init: function () {
 			// TODO: Get child controller
             // this.demoCtrl = $('#demo').demo().data('demo');

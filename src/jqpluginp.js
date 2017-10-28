@@ -40,6 +40,11 @@
         // ...
 
         // Methods
+        /**
+         * @private
+         * @param {jQuery} element
+         * @param {object} options 
+         */
         init: function (element, options) {
             this.options = options;
             this.$element = $(element);
