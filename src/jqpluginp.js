@@ -12,18 +12,18 @@
             if (!ctrl) {
                 var opts = $.extend({},
                     $.fn.$pluginExample$.defaults,
-                    typeof option == 'object' && option
+                    typeof option === 'object' && option
                 );
-                
+
                 $element.data('$pluginExample$', (ctrl = new $PluginExample$(this, opts)));
             }
 
-            if (typeof option == 'string') {
+            if (typeof option === 'string') {
                 ctrl[option].apply(ctrl, args);
             }
         });
     };
-    
+
     $.fn.$pluginExample$.defaults = {
         // TODO: Default values go here
         defaultValue: 1
@@ -35,7 +35,7 @@
 
     $PluginExample$.prototype = {
         constructor: $PluginExample$,
-        
+
         // Properties
         // ...
 
@@ -43,20 +43,20 @@
         /**
          * @private
          * @param {jQuery} element
-         * @param {object} options 
+         * @param {object} options
          */
         init: function (element, options) {
             this.options = options;
             this.$element = $(element);
-            
+
             // TODO: Add initialization code here
         },
-        
+
         demo: function() {
             this.$element.addClass('demo');
             console.log('demo');
         }
-        
+
         // TODO: Add additional methods here
         $END$
     };
